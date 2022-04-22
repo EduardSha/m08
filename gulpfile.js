@@ -21,7 +21,7 @@ const destPath = '/home/daw/ftp/html'
 // Task A
 function copySourceFiles(cb) {
     // Remove previous files
-    del([destPath + '**/*.*'], cb)
+    del([destPath + '**/*.*'], {force:true})
     // Copy new files
     return src([srcPath + '**/*.{html,css,js,svg,png,jpg,jpeg}'])
         .pipe(dest(destPath))
